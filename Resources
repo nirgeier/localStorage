@@ -1,0 +1,19 @@
+http://www.html5rocks.com/en/tutorials/offline/storage/
+
+Cache manifest
+- Problems: if any of the resources is missing all the cache is not valid and will not be downloaded
+
+
+Supported Browser
+- Web SQL Database: http://caniuse.com/sql-storage
+- Index DB : http://caniuse.com/#search=indexdb
+- File API : http://caniuse.com/#search=file api
+
+
+Comments:
+WebSQL
+ * Not optimized DB, seek take a long time for many records.
+ * Safari is asking for permission if more space is require. Fail to store data if there is no space, we need to have a workaround for that.
+   I manged to get up tp 1GB of local file system :-)
+
+

@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, serif, sans-serif;
+    font-size: 12px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+td, th {
+    padding: 5px;
+    width: 50px;
+}
+
+.green, .red {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.error {
+    color: red;
+}
+
+#waiting {
+    display: none;
+}
+
+#progress {
+    color: blue;
+    letter-spacing: 3px;
+    font-size: 14px;
+    padding: 0 0 0 20px;
+}
