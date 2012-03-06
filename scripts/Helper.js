@@ -47,7 +47,6 @@ var Helper = function () {
         },
 
         startWaiting:function () {
-            console.log('Start waiting...');
             progress.innerHTML = '';
             waiting.style.display = 'block';
             this.working();

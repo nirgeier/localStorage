@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, serif, sans-serif;
+    font-size: 12px;
+}
+
+.error {
+    color: red;
+}
+
+#waiting {
+    display: none;
+}
+
+#progress {
+    color: blue;
+    letter-spacing: 3px;
+    font-size: 120%;
+    padding: 0 0 0 20px;
+}
+
+
