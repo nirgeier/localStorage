@@ -7,9 +7,13 @@ var Helper = function () {
         progress = document.querySelector('#progress'),
         workingTimer,
         features = {
-            webSQL:{
-                supported:!!window.openDatabase,
-                src:'WebSQL/WebSQL.js'
+            /*webSQL:{
+             supported:!!window.openDatabase,
+             src:'WebSQL/WebSQL.js'
+             },*/
+            indexDB:{
+                supported:!!window.webkitIndexedDB || !!window.mozIndexedDB,
+                src:'indexDB/indexDB.js'
             }
         };
 
@@ -19,6 +23,19 @@ var Helper = function () {
         script.async = 'async';
         document.body.appendChild(script);
         Helper.debug('Loading: ' + src);
+    }
+
+    function convertToText(args) {
+        var key, reply = '';
+
+        if (!args.length) {
+            return;
+        }
+
+        for (key in args) {
+            reply += ', ' + args[key];
+        }
+        return reply.substr(2);
     }
 
     return{
@@ -38,12 +55,12 @@ var Helper = function () {
             }
         },
 
-        debug:function (message) {
-            output.insertAdjacentHTML('beforeEnd', '<div>' + message + '</div>');
+        debug:function () {
+            output.insertAdjacentHTML('beforeEnd', '<div>' + convertToText(arguments) + '</div>');
         },
 
-        error:function (message) {
-            output.insertAdjacentHTML('beforeEnd', '<div class="error">' + message + '</div>');
+        error:function () {
+            output.insertAdjacentHTML('beforeEnd', '<div class="error">' + convertToText(arguments) + '</div>');
         },
 
         startWaiting:function () {
@@ -60,8 +77,6 @@ var Helper = function () {
             progress.insertAdjacentHTML('beforeEnd', '.');
             workingTimer = setTimeout(Helper.working, 1000);
         }
-
-
 
     }
 
